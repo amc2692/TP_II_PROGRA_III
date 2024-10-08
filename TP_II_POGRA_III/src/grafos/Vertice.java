@@ -11,12 +11,10 @@ public class Vertice {
 	private String nombre;
 	private Coordinate coordenadas;
 	private HashMap<String, Integer> enlacesDisponibles;
-	private HashMap<String, Integer> verticesEnlazados;
 	
 	public Vertice(String nombre, Coordinate coordenadas) {
 		this.coordenadas = coordenadas;
 		this.enlacesDisponibles = new HashMap<String, Integer>();
-		this.verticesEnlazados = new HashMap<String, Integer>();
 		this.nombre = nombre;
 	}
 
@@ -31,11 +29,6 @@ public class Vertice {
 		}
 	}
 
-	public void agregarVerticeToEnlazadados(String verticeDestino) {
-		verticesEnlazados.put(verticeDestino, enlacesDisponibles.get(verticeDestino));
-		enlacesDisponibles.remove(verticeDestino);
-	}
-	
 	public boolean contieneArista(String verticeDestino) {
 		return enlacesDisponibles.containsKey(verticeDestino);
 	}
@@ -71,10 +64,6 @@ public class Vertice {
 		return coordenadas;
 	}
 	
-	public HashMap<String, Integer> getVerticesEnlazados() {
-		return verticesEnlazados;
-	}
-
 
 	public void setCoordenadas(Coordinate coordenadas) {
 		this.coordenadas = coordenadas;

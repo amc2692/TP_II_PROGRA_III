@@ -29,17 +29,6 @@ public class ClaseAuxiliarTest {
 		assertTrue(listasSonIguales( ClaseAuxiliar.verticesAlcanzables(grafo, "A"), esperado));
 	}
 	
-	@Test
-	public void verticesAlcanzablesPrimTest() {
-		Grafo grafo = crearGrafoPrimDePrueba();
-		Set<String> esperado = new HashSet<String>();
-		esperado.add("A");
-		esperado.add("B");
-		esperado.add("C");
-		esperado.add("E");	
-		
-		assertTrue(listasSonIguales( ClaseAuxiliar.verticesAlcanzablesPrim(grafo, "A"), esperado));
-	}
 	
 
 	@Test
@@ -82,24 +71,6 @@ public class ClaseAuxiliarTest {
 		
 		return grafo;
 	}
-	
-	private Grafo crearGrafoPrimDePrueba() {
-		Grafo grafo = new Grafo();
-		grafo.crearVertice("A", null);
-		grafo.crearVertice("B", null);
-		grafo.crearVertice("C", null);
-		grafo.crearVertice("D", null);
-		grafo.crearVertice("E", null);
-		grafo.crearVertice("F", null);
-
-		grafo.enlazarVertices("A", "B");
-		grafo.enlazarVertices("C", "B");
-		grafo.enlazarVertices("E", "B");
-
-		return grafo;
-
-	}
-	
 	
 	
 }

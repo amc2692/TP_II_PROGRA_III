@@ -13,7 +13,9 @@ public class Grafo {
 	}
 	
 	public void crearVertice(String nombre, Coordinate coord) {
-		listaDeVertices.put(nombre, new Vertice(nombre, coord));
+		if(!listaDeVertices.containsKey(nombre)) {
+			listaDeVertices.put(nombre, new Vertice(nombre, coord));
+		}
 	}
 	
 	public void agregarArista(String origen, String destino, int peso) {
@@ -21,10 +23,6 @@ public class Grafo {
 		listaDeVertices.get(destino).agregarArista(origen, peso);
 	}
 	
-	public void enlazarVertices(String verticeOrigen, String verticeDestino) {
-		listaDeVertices.get(verticeOrigen).agregarVerticeToEnlazadados(verticeDestino);
-		listaDeVertices.get(verticeDestino).agregarVerticeToEnlazadados(verticeOrigen);
-	}
 	
 	public void quitarArista(String origen, String destino) {
 		listaDeVertices.get(origen).quitarArista(destino);

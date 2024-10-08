@@ -9,37 +9,34 @@ import java.util.Set;
 
 import controller.ClaseAuxiliar;
 import grafos.Grafo;
-import grafos.Vertice;
 
 public class Prim {
 	
 	public Grafo crearGrafoPrim(Grafo grafoOriginal) {
 		ArrayList<String> listaDeVertices = new ArrayList<String>(grafoOriginal.getListaDeVertices().keySet());
 		HashSet<String> verticesVisitados = new HashSet<String>();
-		HashSet<String> verticesEnlazados = new HashSet<String>();
-		
-		Grafo grafoPrim = new Grafo();
+		Grafo grafoPrim = new Grafo();	
 		copiarVerticesFromGrafoOriginal(grafoPrim, grafoOriginal);
-		String verticeActual = "";
-		
-		while (listaDeVertices.size() > 0) {
-			
-			
-			verticeActual = listaDeVertices.get(0); 
-			System.out.println(verticeActual);
-			listaDeVertices.remove(0);
-			
-	
-			}
-			
-			
-			verticesVisitados.add(verticeActual);
-			verticesEnlazados.add(verticeActual);
-			verticesEnlazados.add(getVerticeDestinoAristaMenorPeso(grafoOriginal, verticeActual));
-			
+		verticesVisitados.add(listaDeVertices.get(0));
+		while (verticesVisitados.size() < listaDeVertices.size()){
+			int peso = 100;
+			String verticeDestino = "";
+			String verticeOrigen = "";
+			for(String vertice: verticesVisitados) {
 				
+				for(String arista: grafoOriginal.getListaDeVertices().get(vertice).getListaDeAristas().keySet()) {
+					if(grafoOriginal.getListaDeVertices().get(vertice).getListaDeAristas().get(arista) < peso && !verticesVisitados.contains(arista) ) {
+						peso = grafoOriginal.getListaDeVertices().get(vertice).getListaDeAristas().get(arista);
+						verticeDestino = arista;
+						verticeOrigen = vertice;
+					}
+				}
+			}
+			grafoPrim.agregarArista(verticeOrigen, verticeDestino, peso);
+			verticesVisitados.add(verticeDestino);
+			System.out.println(verticeOrigen + " --"+ peso + "--> " + verticeDestino);
+		}		
 		return grafoPrim;
-		
 	}
 
 	private String getVerticeDestinoAristaMenorPeso(Grafo grafoOriginal, String verticeActual) {

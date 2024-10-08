@@ -68,23 +68,6 @@ public class GrafoTest {
 		assertEquals(grafo.getVerticeConAristaMenorPeso("1"), "4");                                                                                   
 	}	
 	
-	@Test
-	public void enlazarVerticesTest() {
-		Grafo grafo = crearGrafoPrueba();
-		grafo.enlazarVertices("1", "2");
-		assertTrue(grafo.getListaDeVertices().get("1").getVerticesEnlazados().containsKey("2") && 
-					grafo.getListaDeVertices().get("2").getVerticesEnlazados().containsKey("1"));
-	                                                                                   
-	}
-	@Test
-	public void enlazarVerticesEliminaEnlaceDisponibleTest() {
-		Grafo grafo = crearGrafoPrueba();
-		grafo.enlazarVertices("1", "2");
-		assertFalse(grafo.getListaDeVertices().get("1").contieneArista("2") && 
-					grafo.getListaDeVertices().get("2").contieneArista("1"));
-	                                                                                   
-	}
-	
 	
 	@Before
 	private Grafo crearGrafoPrueba() {
