@@ -8,10 +8,9 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Grafo grafo = new Grafo();
-		Prim prim = new Prim();
-		//Controller control = new Controller();
+		Controller control = new Controller();
 		
-		grafo.crearVertice("Agente_1", null);
+		/*grafo.crearVertice("Agente_1", null);
 		grafo.crearVertice("Agente_2",null);
 		grafo.crearVertice("Agente_3",null);
 	  	grafo.crearVertice("Agente_4",null);
@@ -38,8 +37,8 @@ public class Main {
 		grafo.agregarArista("Agente_7", "Agente_10", 3);
 		grafo.agregarArista("Agente_8", "Agente_10", 6);
 		
-		System.out.println(prim.crearGrafoPrim(grafo).getInfoVertices());
-		
+		System.out.println(Prim.crearGrafoPrim(grafo).getInfoVertices());
+		*/
 	}
 
 }

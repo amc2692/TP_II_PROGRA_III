@@ -4,10 +4,6 @@ import javax.swing.JFrame;
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
 import javax.swing.JButton;
 import java.awt.Font;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 

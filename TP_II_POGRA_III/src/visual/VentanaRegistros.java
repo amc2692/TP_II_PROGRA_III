@@ -4,12 +4,12 @@ package visual;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaRegistros {
 
@@ -25,6 +25,8 @@ public class VentanaRegistros {
 	public JButton buttonGuardarArista;
 	public JRadioButton buttonRadio;
 	public JComboBox<String> boxUbicaciones;
+	public JButton buttonCargarPredeterminado;
+	public JButton buttonEjecutarPrim;
 
 	public VentanaRegistros() {
 		initialize();
@@ -32,13 +34,13 @@ public class VentanaRegistros {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 434, 348);
+		frame.setBounds(100, 100, 434, 424);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		
 		buttonSalir = new JButton("SALIR");
-		buttonSalir.setBounds(176, 276, 70, 22);
+		buttonSalir.setBounds(175, 352, 70, 22);
 		frame.getContentPane().add(buttonSalir);
 		
 		fieldVertice = new JTextField();
@@ -99,11 +101,11 @@ public class VentanaRegistros {
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Vertice Origen");
-		lblNewLabel_4.setBounds(308, 21, 86, 14);
+		lblNewLabel_4.setBounds(308, 21, 100, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Vertice Destino");
-		lblNewLabel_5.setBounds(308, 61, 86, 14);
+		lblNewLabel_5.setBounds(308, 61, 100, 14);
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		fieldPeso = new JTextField();
@@ -114,6 +116,14 @@ public class VentanaRegistros {
 		JLabel lblNewLabel_6 = new JLabel("Peso");
 		lblNewLabel_6.setBounds(308, 99, 86, 14);
 		frame.getContentPane().add(lblNewLabel_6);
+		
+		buttonCargarPredeterminado = new JButton("CARGAR PRECARGADO");
+		buttonCargarPredeterminado.setBounds(118, 318, 180, 23);
+		frame.getContentPane().add(buttonCargarPredeterminado);
+		
+		buttonEjecutarPrim = new JButton("EJECUTAR PRIM");
+		buttonEjecutarPrim.setBounds(118, 284, 180, 23);
+		frame.getContentPane().add(buttonEjecutarPrim);
 		
 		frame.setVisible(true);
 	}

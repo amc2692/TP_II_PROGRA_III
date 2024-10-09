@@ -16,6 +16,7 @@ public class Grafo {
 		if(!listaDeVertices.containsKey(nombre)) {
 			listaDeVertices.put(nombre, new Vertice(nombre, coord));
 		}
+		
 	}
 	
 	public void agregarArista(String origen, String destino, int peso) {
